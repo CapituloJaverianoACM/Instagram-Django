@@ -1,0 +1,27 @@
+
+/* index.css */
+
+.insta-footer {
+    font-size: 12px;
+    font-weight: bold;
+    padding: var(--padding) 0;
+}
+
+.insta-footer_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--dark_blue);
+}
+
+.insta-footer_item {
+    text-transform: uppercase;
+    margin-right: var(--margin);
+    line-height: 1.5rem;
+}
+
+.insta-footer_copyright {
+    color: var(--gray_9);
+}

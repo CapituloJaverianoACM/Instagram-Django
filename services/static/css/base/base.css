@@ -1,0 +1,15 @@
+/* base.css */
+
+body {
+    font-family: var(--main_font);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.maincontent {
+    max-width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}

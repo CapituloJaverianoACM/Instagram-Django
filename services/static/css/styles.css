@@ -1,0 +1,9 @@
+
+/* styles.css */
+
+@import "config/variables.css";
+
+@import "base/base.css";
+@import "base/normalize.css";
+
+@import "pages/index.css";
