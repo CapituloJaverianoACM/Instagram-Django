@@ -1,0 +1,42 @@
+
+/* footer.css */
+
+.insta-footer {
+    width: 350px;
+    margin: auto;
+    font-size: 12px;
+    padding: var(--padding) 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.insta-footer_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    color: var(--dark_blue);
+}
+
+.insta-footer_item {
+    margin-right: var(--margin);
+    line-height: 1.125rem;
+}
+
+.insta-footer_copyright {
+    color: var(--gray_9);
+}
+
+@media all and (min-width: 876px) {
+    .insta-footer {
+        width: 100%;
+        text-align: left;
+    }
+
+    .insta-footer_list {
+        justify-content: flex-start;
+    }
+}

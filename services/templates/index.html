@@ -1,24 +1,26 @@
 {% extends "base.html" %}
 
-{% block maincontent %}
-	<section>
+{% load static %}
 
+{% block maincontent %}
+	<section class="insta-index_content">
+		<img src="{% static 'images/phones.png' %}" alt="Instagram phones" class="insta-index_phones">
+		<section class="insta-index_data">
+			<form method="POST" action="/register/" class="insta-index_box insta-form" autocomplete="off">
+				{% csrf_token %}
+				<img src="{% static 'images/instagram_logo_letras.png' %}" alt="Instagram logo" class="insta-form_image">
+				<p class="insta-form_message">Regístrate para ver fotos y vídeos de tus amigos.</p>
+				<input class="insta-form_input" name="email" type="email" placeholder="Correo electrónico" required>
+				<input class="insta-form_input" name="name" type="text" placeholder="Nombre completo" required>
+				<input class="insta-form_input" name="username" type="text" placeholder="Nombre de usuario" required>
+				<input class="insta-form_input" name="password" type="password" placeholder="Contraseña" required>
+				<button class="insta-form_button">Registrarte</button>
+				<p class="insta-form_conditions">Al registrarte, aceptas nuestras <span class="bold">Condiciones</span> y la <span class="bold">Política de privacidad</span>.</p>
+			</form>
+			<section class="insta-index_box">
+				<p class="insta-index_login">¿Tienes una cuenta? <a href="/login/">Entrar</a></p>
+			</section>
+		</section>
 	</section>
-	<footer class="insta-footer">
-		<ul class="insta-footer_list">
-			<li class="insta-footer_item">Información</li>
-			<li class="insta-footer_item">Asistencia</li>
-			<li class="insta-footer_item">Blog</li>
-			<li class="insta-footer_item">Prensa</li>
-			<li class="insta-footer_item">API</li>
-			<li class="insta-footer_item">Empleo</li>
-			<li class="insta-footer_item">Privacidad</li>
-			<li class="insta-footer_item">Condiciones</li>
-			<li class="insta-footer_item">Directorio</li>
-			<li class="insta-footer_item">Perfiles</li>
-			<li class="insta-footer_item">Hashtags</li>
-			<li class="insta-footer_item">Idioma</li>
-		</ul>
-		<p class="insta-footer_copyright">© 2018 INSTAGRAM</p>
-	</footer>
+	{% include "modules/footer.html" %}
 {% endblock %}

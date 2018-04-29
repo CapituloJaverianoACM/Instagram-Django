@@ -1,0 +1,27 @@
+
+/* components.css */
+
+.insta-separator {
+    display: flex;
+    align-items: center;
+    color: var(--gray_9);
+}
+
+.insta-separator::before {
+    margin-right: var(--margin);
+}
+
+.insta-separator::after {
+    margin-left: var(--margin);
+}
+
+.insta-separator::before, .insta-separator::after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid var(--gray_9);
+    flex-grow: 1;
+}
+
+.bold {
+    font-weight: bold;
+}

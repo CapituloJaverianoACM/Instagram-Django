@@ -1,9 +1,17 @@
 
 /* styles.css */
 
+/* Config files */
 @import "config/variables.css";
 
+/* Base files */
 @import "base/base.css";
 @import "base/normalize.css";
 
+/* Module files */
+@import "modules/components.css";
+@import "modules/footer.css";
+@import "modules/form.css";
+
+/* Page files */
 @import "pages/index.css";

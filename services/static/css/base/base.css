@@ -1,15 +1,25 @@
 /* base.css */
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: var(--blue);
+}
+
 body {
     font-family: var(--main_font);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background: var(--background);
 }
 
 .maincontent {
-    max-width: 60%;
-    margin: 0 auto;
+    margin: auto;
     display: flex;
     flex-direction: column;
+    padding: var(--padding);
 }

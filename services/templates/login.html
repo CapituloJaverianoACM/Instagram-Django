@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block maincontent %}
+	<section class="insta-index_content">
+		<img src="{% static 'images/phones.png' %}" alt="Instagram phones" class="insta-index_phones">
+		<section class="insta-index_data">
+			<form method="POST" action="/loginuser/" class="insta-index_box insta-form" autocomplete="off">
+				{% csrf_token %}
+				<img src="{% static 'images/instagram_logo_letras.png' %}" alt="Instagram logo" class="insta-form_image">
+				<input class="insta-form_input" name="email" type="text" placeholder="Usuario" required>
+				<input class="insta-form_input" name="password" type="password" placeholder="Contraseña" required>
+				<button class="insta-form_button">Entrar</button>
+			</form>
+			<section class="insta-index_box">
+				<p class="insta-index_login">¿No tienes una cuenta? <a href="/">Regístrate</a></p>
+			</section>
+		</section>
+	</section>
+	{% include "modules/footer.html" %}
+{% endblock %}

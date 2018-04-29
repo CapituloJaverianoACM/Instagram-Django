@@ -1,27 +1,35 @@
 
 /* index.css */
 
-.insta-footer {
-    font-size: 12px;
-    font-weight: bold;
+.insta-index_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: var(--padding) 0;
 }
 
-.insta-footer_list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    color: var(--dark_blue);
+.insta-index_phones {
+    display: none;
 }
 
-.insta-footer_item {
-    text-transform: uppercase;
-    margin-right: var(--margin);
-    line-height: 1.5rem;
+@media all and (min-width: 876px) {
+    .insta-index_phones {
+        display: block;
+    }
 }
 
-.insta-footer_copyright {
-    color: var(--gray_9);
+.insta-index_data {
+}
+
+.insta-index_box {
+    background: white;
+    border: 1px solid var(--border);
+    width: 350px;
+    margin-bottom: var(--margin);
+    padding: var(--padding) 40px;
+}
+
+.insta-index_login {
+    text-align: center;
+    font-size: 14px;
 }
