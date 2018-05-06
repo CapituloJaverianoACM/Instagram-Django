@@ -3,7 +3,7 @@
 
 .insta-footer {
     width: 350px;
-    margin: auto;
+    margin: 0 auto;
     font-size: 12px;
     padding: var(--padding) 0;
     text-transform: uppercase;

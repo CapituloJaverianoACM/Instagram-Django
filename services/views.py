@@ -5,14 +5,14 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from services.models import MyUser
 
-
 def index(request):
     return render(request, "index.html")
-
 
 def login(request):
     return render(request, "login.html")
 
+def home(request):
+    return render(request, "home.html")
 
 def register(request):
     if request.method == 'POST':
@@ -25,10 +25,9 @@ def register(request):
         )
         user = User.objects.create_user(**data)
         my_user = MyUser.objects.create(user_django=user)
-        return render(request, "home.html")
+        return redirect('home')
     return redirect('index')
 
 
 def validate_user(request):
-    print(request)
-    return HttpResponse("Hola")
+    return redirect('home')
