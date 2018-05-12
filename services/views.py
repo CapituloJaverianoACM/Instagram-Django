@@ -14,6 +14,9 @@ def login(request):
 def home(request):
     return render(request, "home.html")
 
+def profile(request):
+    return render(request, "profile.html")
+
 def register(request):
     if request.method == 'POST':
         post_form_data = request.POST

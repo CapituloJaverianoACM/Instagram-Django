@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block maincontent %}
+    {% include "modules/navbar.html" %}
+    
+    <section class="insta-profile">
+        <section class="insta-profile_header">
+            <section class="insta-profile_picture_container">
+                <img class="insta-profile_picture" src="https://scontent-bog1-1.cdninstagram.com/vp/445e2da374ff1b833c09c02f2d6f7188/5B81FCF0/t51.2885-19/s150x150/30949300_174802809892224_713658990038351872_n.jpg" alt="Foto de perfil">
+            </section>
+            <section class="insta-profile_data">
+                <article class="insta-profile_data_section">
+                    <span class="insta-profile_username">juanmsl</span>
+                    <button class="insta-profile_edit">Editar perfil</button>
+                    <a href="" class="fa fa-cog insta-profile_cog" ></a>
+                </article>
+                <article class="insta-profile_data_section">
+                    <p class="insta-profile_counters"><span class="insta-profile_number">12</span> publicaciones</p>
+                    <p class="insta-profile_counters"><span class="insta-profile_number">12</span> seguidores</p>
+                    <p class="insta-profile_counters"><span class="insta-profile_number">12</span> seguidos</p>
+                </article>
+                <p class="insta-profile_description">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </section>
+        </section>
+        <section class="insta-profile_gallery">
+            <article class="insta-profile_photo">
+                <img class="insta-profile_photo_image" src="https://www.adhesivosnatos.com/wp-content/uploads/2016/08/totoros-familia-570x600.png" alt="">
+                <section class="insta-profile_photo_content">
+                    <span class="fa fa-heart">12</span>
+                    <span class="fa fa-comment">14</span>
+                </section>
+            </article>
+        </section>
+    </section>
+
+	{% include "modules/footer.html" %}
+{% endblock %}
