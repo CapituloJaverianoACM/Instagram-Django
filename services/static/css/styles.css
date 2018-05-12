@@ -12,6 +12,7 @@
 @import "modules/components.css";
 @import "modules/footer.css";
 @import "modules/form.css";
+@import "modules/navbar.css";
 
 /* Page files */
 @import "pages/index.css";
