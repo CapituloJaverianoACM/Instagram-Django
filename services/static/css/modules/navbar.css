@@ -1,0 +1,21 @@
+.insta-navbar {
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.insta-separator {
+    width: 1px;
+    align-self: stretch;
+    background: black;
+}
+
+.insta-navbar_section {
+    display: flex;
+    align-items: center;
+}
