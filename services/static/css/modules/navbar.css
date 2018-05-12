@@ -7,15 +7,47 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: var(--padding);
+    border-bottom: 1px solid var(--gray_ef);
 }
 
-.insta-separator {
+.insta-navbar_logo {
+    font-size: 2rem;
+}
+
+.insta-navbar_separator {
     width: 1px;
     align-self: stretch;
-    background: black;
+    background: var(--gray_9);
+    margin: 0 var(--margin);
+}
+
+.insta-navbar_letras {
+    width: 100px;
+}
+
+.insta-navbar_input {
+    background: var(--background);
+    border: 1px solid var(--gray_ef);
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 0.8rem;
+    text-align: center;
+    outline: 0;
+}
+
+.insta-navbar_input:focus {
+    text-align: left;
+    background: white;
 }
 
 .insta-navbar_section {
     display: flex;
     align-items: center;
+}
+
+.insta-navbar_icon {
+    color: inherit;
+    margin-left: var(--margin);
+    font-size: 1.5rem;
 }

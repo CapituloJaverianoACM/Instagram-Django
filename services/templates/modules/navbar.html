@@ -2,16 +2,16 @@
 
 <nav class="insta-navbar">
     <section class="insta-navbar_section">
-        <span class="fa fa-instagram"></span>
-        <span class="insta-separator"></span>
-        <img src="{% static 'images/instagram_logo_letras.png' %}" alt="Instagram">
+        <span class="fa fa-instagram insta-navbar_logo"></span>
+        <span class="insta-navbar_separator"></span>
+        <img class="insta-navbar_letras" src="{% static 'images/instagram_logo_letras.png' %}" alt="Instagram">
     </section>
     <form method="GET" action="" autocomplete="off">
-        <input type="text" placeholder="Buscar">
+        <input type="search" placeholder="Buscar" class="insta-navbar_input">
     </form>
     <section class="insta-navbar_section">
-        <a href="" class="fa fa-compass"></a>
-        <a href="" class="fa fa-heart"></a>
-        <a href="" class="fa fa-user"></a>
+        <a href="" class="fa fa-compass insta-navbar_icon"></a>
+        <a href="" class="fa fa-heart-o insta-navbar_icon"></a>
+        <a href="" class="fa fa-user-o insta-navbar_icon"></a>
     </section>
 </nav>
