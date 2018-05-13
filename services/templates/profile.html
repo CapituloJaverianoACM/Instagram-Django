@@ -4,7 +4,7 @@
 
 {% block maincontent %}
     {% include "modules/navbar.html" %}
-    
+
     <section class="insta-profile">
         <section class="insta-profile_header">
             <section class="insta-profile_picture_container">
@@ -12,28 +12,28 @@
             </section>
             <section class="insta-profile_data">
                 <article class="insta-profile_data_section">
-                    <span class="insta-profile_username">juanmsl</span>
+                    <span class="insta-profile_username">juan_msl</span>
                     <button class="insta-profile_edit">Editar perfil</button>
                     <a href="" class="fa fa-cog insta-profile_cog" ></a>
                 </article>
                 <article class="insta-profile_data_section">
-                    <p class="insta-profile_counters"><span class="insta-profile_number">12</span> publicaciones</p>
-                    <p class="insta-profile_counters"><span class="insta-profile_number">12</span> seguidores</p>
-                    <p class="insta-profile_counters"><span class="insta-profile_number">12</span> seguidos</p>
+                    <p class="insta-profile_counters"><span class="insta-profile_number">26</span> publicaciones</p>
+                    <p class="insta-profile_counters"><span class="insta-profile_number">92</span> seguidores</p>
+                    <p class="insta-profile_counters"><span class="insta-profile_number">85</span> seguidos</p>
                 </article>
-                <p class="insta-profile_description">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
+                <p class="insta-profile_description">Juan</p>
             </section>
         </section>
         <section class="insta-profile_gallery">
+            {% for i in "xxxxxxxxx" %}
             <article class="insta-profile_photo">
-                <img class="insta-profile_photo_image" src="https://www.adhesivosnatos.com/wp-content/uploads/2016/08/totoros-familia-570x600.png" alt="">
+                <img class="insta-profile_photo_image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCOM9cFEaH1hOvb_1izFCQWwzZaMZvhdbhONSucqLUW9qOf43u" alt="">
                 <section class="insta-profile_photo_content">
-                    <span class="fa fa-heart">12</span>
-                    <span class="fa fa-comment">14</span>
+                    <span class="insta-profile_photo_icon"><span class="fa fa-heart"> </span>12</span>
+                    <span class="insta-profile_photo_icon"><span class="fa fa-comment"> </span>14</span>
                 </section>
             </article>
+            {% endfor %}
         </section>
     </section>
 

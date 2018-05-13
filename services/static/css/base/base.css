@@ -18,9 +18,10 @@ body {
 }
 
 .maincontent {
+    max-width: var(--max-width);
     margin: 0 auto;
+    padding: 60px 20px 0;
     display: flex;
     flex-direction: column;
-    padding: var(--padding);
     min-height: 100vh;
 }

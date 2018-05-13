@@ -1,37 +1,41 @@
 .insta-profile {
-    max-width: 900px;
 }
 
 .insta-profile_header {
     display: flex;
-    align-items: center;
+    margin-bottom: 44px;
 }
 
 .insta-profile_picture_container {
-    padding: var(--padding) 100px;
+    margin-right: 20px;
 }
 
 .insta-profile_picture {
-    width: 152px;
-    height: 152px;
+    width: 77px;
+    height: 77px;
     border-radius: 50%;
+    margin: 0 auto;
+    display: block;
 }
 
 .insta-profile_data {
-    font-weight: lighter;
 }
 
 .insta-profile_username {
     font-size: 2rem;
+    font-weight: 200;
+    margin-right: 20px;
 }
 
 .insta-profile_edit {
-    padding: 5px var(--padding);
-    font-size: 0.8rem;
+    padding: 0 24px;
+    line-height: 26px;
+    font-size: 0.9rem;
     background: var(--background);
     border: 1px solid var(--gray_db);
     border-radius: 3px;
-    margin: 0 var(--margin);
+    font-weight: 600;
+    margin-right: 10px;
     outline: 0;
 }
 
@@ -40,11 +44,12 @@
 }
 
 .insta-profile_counters {
-    margin-right: 40px;
+    margin: 16px 40px 16px 0;
+    font-weight: 400;
 }
 
 .insta-profile_number {
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .insta-profile_cog {
@@ -58,12 +63,12 @@
 
 .insta-profile_description {
     margin: 0;
-    font-weight: normal;
+    font-weight: 600;
 }
 
 .insta-profile_gallery {
     display: grid;
-    grid-gap: 1.5rem;
+    grid-gap: 0.2rem;
     grid-template-columns: repeat(3, 1fr);
 }
 
@@ -75,6 +80,7 @@
     width: 100%;
     height: 100%;
     display: block;
+    object-fit: cover;
 }
 
 .insta-profile_photo_content {
@@ -93,4 +99,29 @@
 
 .insta-profile_photo_content:hover {
     opacity: 1;
+}
+
+.insta-profile_photo_icon {
+    padding: 10px;
+}
+
+.insta-profile_photo_icon .fa {
+    margin-right: 5px;
+}
+
+@media all and (min-width: 876px) {
+    .insta-profile_header {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 1.5rem;
+    }
+
+    .insta-profile_picture {
+        width: 152px;
+        height: 152px;
+    }
+
+    .insta-profile_gallery {
+        grid-gap: 1.5rem;
+    }
 }
