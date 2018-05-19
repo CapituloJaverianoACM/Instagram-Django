@@ -12,30 +12,31 @@
             </section>
             <section class="insta-profile_data">
                 <article class="insta-profile_data_section">
-                    <span class="insta-profile_username">juanmsl</span>
+                    <span class="insta-profile_username">{{ username }}</span>
                     <button class="insta-profile_edit">Editar perfil</button>
                     <a href="" class="fa fa-cog insta-profile_cog" ></a>
                 </article>
                 <article class="insta-profile_data_section">
-                    <p class="insta-profile_counters"><span class="insta-profile_number">12</span> publicaciones</p>
-                    <p class="insta-profile_counters"><span class="insta-profile_number">12</span> seguidores</p>
-                    <p class="insta-profile_counters"><span class="insta-profile_number">12</span> seguidos</p>
+                    <p class="insta-profile_counters"><span class="insta-profile_number">{{ post|length }}</span> publicaciones</p>
+                    <p class="insta-profile_counters"><span class="insta-profile_number">{{ number_followers }}</span> seguidores</p>
+                    <p class="insta-profile_counters"><span class="insta-profile_number">{{ number_victims }}</span> seguidos</p>
                 </article>
-                <p class="insta-profile_description">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
+                <p class="insta-profile_description"><span>{{ my_user.user_django.first_name }}</span> {{ my_user.description|default_if_none:"" }} </p>
             </section>
         </section>
         <section class="insta-profile_gallery">
+            {% for curr_post in post %}
             <article class="insta-profile_photo">
-                <img class="insta-profile_photo_image" src="https://www.adhesivosnatos.com/wp-content/uploads/2016/08/totoros-familia-570x600.png" alt="">
+                <img class="insta-profile_photo_image" src="{% static '' %}{curr_post.photo}}" alt="">
                 <section class="insta-profile_photo_content">
                     <span class="fa fa-heart">12</span>
                     <span class="fa fa-comment">14</span>
                 </section>
             </article>
+        }
+        {% endfor %}
         </section>
     </section>
 
-	{% include "modules/footer.html" %}
+    {% include "modules/footer.html" %}
 {% endblock %}

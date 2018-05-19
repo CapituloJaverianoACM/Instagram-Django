@@ -6,10 +6,10 @@
 	<section class="insta-index_content">
 		<img src="{% static 'images/phones.png' %}" alt="Instagram phones" class="insta-index_phones">
 		<section class="insta-index_data">
-			<form method="POST" action="{% url 'validate' %}" class="insta-index_box insta-form" autocomplete="off">
+			<form method="POST" action="{% url 'login' %}" class="insta-index_box insta-form" autocomplete="off">
 				{% csrf_token %}
 				<img src="{% static 'images/instagram_logo_letras.png' %}" alt="Instagram logo" class="insta-form_image">
-				<input class="insta-form_input" name="email" type="text" placeholder="Usuario" required>
+				<input class="insta-form_input" name="username" type="text" placeholder="Usuario" required>
 				<input class="insta-form_input" name="password" type="password" placeholder="Contraseña" required>
 				<button class="insta-form_button">Entrar</button>
 			</form>
