@@ -12,22 +12,22 @@
             </section>
             <section class="insta-profile_data">
                 <article class="insta-profile_data_section">
-                    <span class="insta-profile_username">juan_msl</span>
+                    <span class="insta-profile_username">{{ username }}</span>
                     <button class="insta-profile_edit">Editar perfil</button>
                     <a href="" class="fa fa-cog insta-profile_cog" ></a>
                 </article>
                 <article class="insta-profile_data_section">
-                    <p class="insta-profile_counters"><span class="insta-profile_number">26</span> publicaciones</p>
-                    <p class="insta-profile_counters"><span class="insta-profile_number">92</span> seguidores</p>
-                    <p class="insta-profile_counters"><span class="insta-profile_number">85</span> seguidos</p>
+                    <p class="insta-profile_counters"><span class="insta-profile_number">{{ post|length }}</span> publicaciones</p>
+                    <p class="insta-profile_counters"><span class="insta-profile_number">{{ number_followers }}</span> seguidores</p>
+                    <p class="insta-profile_counters"><span class="insta-profile_number">{{ number_victims }}</span> seguidos</p>
                 </article>
-                <p class="insta-profile_description">Juan</p>
+                <p class="insta-profile_description"><span>{{ my_user.user_django.first_name }}</span> {{ my_user.description|default_if_none:"" }} </p>
             </section>
         </section>
         <section class="insta-profile_gallery">
-            {% for i in "xxxxxxxxx" %}
+            {% for curr_post in post %}
             <article class="insta-profile_photo">
-                <img class="insta-profile_photo_image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCOM9cFEaH1hOvb_1izFCQWwzZaMZvhdbhONSucqLUW9qOf43u" alt="">
+                <img class="insta-profile_photo_image" src="{% static '' %}{{curr_post.photo}}" alt="">
                 <section class="insta-profile_photo_content">
                     <span class="insta-profile_photo_icon"><span class="fa fa-heart"> </span>12</span>
                     <span class="insta-profile_photo_icon"><span class="fa fa-comment"> </span>14</span>
