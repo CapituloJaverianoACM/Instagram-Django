@@ -14,3 +14,24 @@ window.onscroll = function() {
         navbar.classList.remove("insta-navbar_scroll");
     }
 };
+
+let image_container = $("#upload-image");
+
+if(image_container) {
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                image_container.attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#image_input").change(function(){
+        readURL(this);
+    });
+
+}

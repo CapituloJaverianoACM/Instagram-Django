@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block maincontent %}
+	{% include "modules/navbar.html" %}
+	<section class="insta-upload">
+		<section class="insta-upload-photo">
+			<img src="" alt="" id="upload-image">
+		</section>
+		<form method="POST" action="" class="insta-upload-form">
+			{% csrf_token %}
+			<input placeholder="Descripción..." name="description" class="insta-upload-input" />
+			<section class="insta-upload-inputfile-container">
+				<input type="file" name="file" id="image_input" class="insta-upload-inputfile">
+			</section>
+			<button class="insta-upload-button">Subir foto</button>
+		</form>
+	</section>
+	{% include "modules/footer.html" %}
+{% endblock %}

@@ -1,0 +1,62 @@
+.insta-upload {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.insta-upload-photo {
+    background: var(--border);
+    flex-grow: 1;
+}
+
+.insta-upload-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.insta-upload-form {
+    margin-bottom: 50px;
+}
+
+.insta-upload-input {
+    border: 0;
+    outline: 0;
+    padding: var(--padding);
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.insta-upload-inputfile-container {
+    width: 100px;
+    height: 100px;
+    background: var(--border);
+    position: relative;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 0 30px 0 black, 0 0 0 10px var(--border);
+}
+
+.insta-upload-inputfile {
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.insta-upload-button {
+    padding: var(--padding);
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    margin: auto;
+    width: 200px;
+    display: block;
+    margin-top: 50px;
+}

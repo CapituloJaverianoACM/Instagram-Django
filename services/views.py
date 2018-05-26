@@ -21,6 +21,10 @@ def home(request):
         return redirect('index')
     return render(request, "home.html")
 
+def upload_photo(request):
+    if not request.user.is_authenticated:
+        return redirect('index')
+    return render(request, "upload.html")
 
 def profile(request):
     if not request.user.is_authenticated:
