@@ -12,9 +12,21 @@
             </section>
             <section class="insta-profile_data">
                 <article class="insta-profile_data_section">
-                    <span class="insta-profile_username">{{ username }}</span>
-                    <button class="insta-profile_edit">Editar perfil</button>
-                    <a href="" class="fa fa-cog insta-profile_cog" ></a>
+                    <span class="insta-profile_username">{{ current_username }}</span>
+                    {% if current_username == username %}
+                        <button class="insta-profile_edit">Editar perfil</button>
+                        <a href="" class="fa fa-cog insta-profile_cog" ></a>
+                    {% else %}
+                        {% if is_follow %}
+                            <form action="{% url 'unfollow' username current_username %}">
+                                <button class="insta-profile_edit">Dejar de seguir</button>
+                            </form>
+                        {% else %}
+                            <form action="{% url 'follow' username current_username %}">
+                                <button class="insta-profile_edit">Seguir</button>
+                            </form>
+                        {% endif %}
+                    {% endif %}
                 </article>
                 <article class="insta-profile_data_section">
                     <p class="insta-profile_counters"><span class="insta-profile_number">{{ post|length }}</span> publicaciones</p>
@@ -29,8 +41,8 @@
             <article class="insta-profile_photo">
                 <img class="insta-profile_photo_image" src="{% static '' %}{{curr_post.photo}}" alt="">
                 <section class="insta-profile_photo_content">
-                    <span class="insta-profile_photo_icon"><span class="fa fa-heart"> </span>12</span>
-                    <span class="insta-profile_photo_icon"><span class="fa fa-comment"> </span>14</span>
+                    <span class="insta-profile_photo_icon"><span class="fa fa-heart"> </span>{{ curr_post.like_set.count }}</span>
+                    <span class="insta-profile_photo_icon"><span class="fa fa-comment"> </span>{{ curr_post.comment_set.count }}</span>
                 </section>
             </article>
             {% endfor %}

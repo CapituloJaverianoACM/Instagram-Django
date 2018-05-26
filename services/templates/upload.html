@@ -8,7 +8,7 @@
 		<section class="insta-upload-photo">
 			<img src="" alt="" id="upload-image">
 		</section>
-		<form method="POST" action="" class="insta-upload-form">
+		<form method="POST" action="{% url 'upload' %}" class="insta-upload-form" enctype="multipart/form-data">
 			{% csrf_token %}
 			<input placeholder="Descripción..." name="description" class="insta-upload-input" />
 			<section class="insta-upload-inputfile-container">

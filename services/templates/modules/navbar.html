@@ -7,12 +7,13 @@
             <span class="insta-navbar_separator"></span>
             <img class="insta-navbar_letras" src="{% static 'images/instagram_logo_letras.png' %}" alt="Instagram">
         </a>
-        <form method="GET" action="" autocomplete="off">
-            <input type="search" placeholder="Buscar" class="insta-navbar_input">
+        <form method="POST" action="{% url 'search' %}" autocomplete="off">
+            {% csrf_token %}
+            <input type="search" placeholder="Buscar" name="search_username" class="insta-navbar_input">
         </form>
         <section class="insta-navbar_section">
             <a href="{% url 'upload' %}" class="fa fa-camera insta-navbar_icon"></a>
-            <a href="{% url 'profile' %}" class="fa fa-user-o insta-navbar_icon"></a>
+            <a href="{% url 'profile'  username  %}" class="fa fa-user-o insta-navbar_icon"></a>
             <a href="{% url 'logout' %}" class="fa fa-sign-out insta-navbar_icon"></a>
         </section>
     </section>
