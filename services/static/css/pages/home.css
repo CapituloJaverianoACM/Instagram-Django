@@ -1,0 +1,61 @@
+.insta-home {
+    display: grid;
+    grid-template-columns: 1fr 293px;
+    grid-gap: var(--gutter);
+}
+
+.insta-home .insta-cards {
+
+}
+
+.insta-home .insta-users {
+
+}
+
+.insta-home .insta-users-header {
+    display: flex;
+    padding: var(--padding);
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.insta-home .insta-users-profilepicture {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: var(--margin);
+}
+
+.insta-home .insta-users-username {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.insta-home .insta-users-titles {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    padding: var(--padding) 0;
+}
+
+.insta-home .insta-users-users {
+    overflow-y: auto;
+    height: 306px;
+}
+
+.insta-home .insta-users-user {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--margin);
+    color: inherit;
+}
+
+.insta-home .insta-users-user-profilepicture {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: var(--margin);
+}

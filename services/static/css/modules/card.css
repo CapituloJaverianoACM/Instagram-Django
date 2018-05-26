@@ -1,0 +1,87 @@
+.insta-card {
+    background: white;
+    border: 1px solid var(--border);
+    margin-bottom: 60px;
+}
+
+.insta-card .insta-card-header {
+    display: flex;
+    padding: var(--padding);
+    align-items: center;
+}
+
+.insta-card .insta-card-profilepicture {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: var(--margin);
+}
+
+.insta-card .insta-card-username {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.insta-card .insta-card-picture-container {
+
+}
+
+.insta-card .insta-card-picture {
+    width: 100%;
+}
+
+.insta-card .insta-card-icons {
+    padding: var(--padding);
+    font-size: 1.5rem;
+}
+
+.insta-card .fa{
+    margin-right: var(--margin);
+}
+
+.insta-card .insta-card-likes {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0 var(--padding);
+    margin: 0;
+}
+
+.insta-card .insta-card-description {
+    padding: 0 var(--padding);
+    font-size: 0.8rem;
+}
+
+.insta-card .insta-card-comments {
+    padding: 0 var(--padding);
+}
+
+.insta-card .insta-card-comment {
+    font-size: 0.8rem;
+}
+
+.insta-card .insta-card-comment-user {
+    margin: 0;
+    font-weight: 600;
+}
+
+.insta-card .insta-card-time {
+    color: var(--gray_9);
+    font-size: 0.7rem;
+    padding-bottom: var(--padding);
+    border-bottom: 1px solid var(--border);
+    display: block;
+    margin: 0 var(--margin);
+}
+
+.insta-card .insta-card-form {
+
+}
+
+.insta-card .insta-card-input {
+    border: 0;
+    outline: 0;
+    padding: var(--padding);
+    font-size: 0.8rem;
+}

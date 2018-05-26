@@ -13,7 +13,9 @@
 @import "modules/footer.css";
 @import "modules/form.css";
 @import "modules/navbar.css";
+@import "modules/card.css";
 
 /* Page files */
 @import "pages/index.css";
-@import "pages/profile.css"
+@import "pages/profile.css";
+@import "pages/home.css";

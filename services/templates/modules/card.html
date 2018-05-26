@@ -1,0 +1,30 @@
+<section class="insta-card">
+    <section class="insta-card-header">
+        <img src="https://scontent-bog1-1.cdninstagram.com/vp/445e2da374ff1b833c09c02f2d6f7188/5B81FCF0/t51.2885-19/s150x150/30949300_174802809892224_713658990038351872_n.jpg" alt="user picture" class="insta-card-profilepicture">
+        <p class="insta-card-username">juanmsl</p>
+    </section>
+    <section class="insta-card-picture-container">
+        <img src="https://i.ytimg.com/vi/1L6cjQ_TE2k/maxresdefault.jpg" alt="picture" class="insta-card-picture">
+    </section>
+    <section class="insta-card-icons">
+        <span class="fa fa-heart-o"></span>
+        <span class="fa fa-comment-o"></span>
+    </section>
+    <p class="insta-card-likes">A 12 personas les gusta esto</p>
+    <p class="insta-card-description">
+        <span class="insta-card-username">juanmsl</span>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque distinctio iusto nisi voluptatem voluptatum!
+    </p>
+    <section class="insta-card-comments">
+        {% for i in "xx" %}
+        <p class="insta-card-comment">
+            <span class="insta-card-comment-user">juanmsl</span>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam sint tenetur voluptatum.
+        </p>
+        {% endfor %}
+    </section>
+    <span class="insta-card-time">Hace una hora</span>
+    <form method="POST" action="" class="insta-card-form">
+        <input class="insta-card-input" placeholder="Agrega un comentario..."/>
+    </form>
+</section>

@@ -4,6 +4,33 @@
 
 {% block maincontent %}
 	{% include "modules/navbar.html" %}
-	<h1>Soy el home</h1>
+
+    <section class="insta-home">
+        <section class="insta-cards">
+            {% for i in "xxxxx" %}
+            {% include "modules/card.html" %}
+            {% endfor %}
+        </section>
+        <section class="insta-users">
+            <section class="insta-users-header">
+                <img src="https://scontent-bog1-1.cdninstagram.com/vp/445e2da374ff1b833c09c02f2d6f7188/5B81FCF0/t51.2885-19/s150x150/30949300_174802809892224_713658990038351872_n.jpg" alt="user picture" class="insta-users-profilepicture">
+                <p class="insta-users-username">juanmsl</p>
+            </section>
+            <section class="insta-users-titles">
+                <span>Usuarios</span>
+                <a herf="">Ver todos</a>
+            </section>
+            <section class="insta-users-users">
+                {% for i in "xxxxx" %}
+                <a href="" class="insta-users-user">
+                    <img src="https://scontent-bog1-1.cdninstagram.com/vp/445e2da374ff1b833c09c02f2d6f7188/5B81FCF0/t51.2885-19/s150x150/30949300_174802809892224_713658990038351872_n.jpg" alt="picture" class="insta-users-user-profilepicture">
+                    <span class="insta-users-username">juanmsl</span>
+                </a>
+                {% endfor %}
+            </section>
+        </section>
+    </section>
+
+
 	{% include "modules/footer.html" %}
 {% endblock %}
