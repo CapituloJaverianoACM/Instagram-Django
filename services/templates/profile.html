@@ -8,7 +8,7 @@
     <section class="insta-profile">
         <section class="insta-profile_header">
             <section class="insta-profile_picture_container">
-                <img class="insta-profile_picture" src="https://scontent-bog1-1.cdninstagram.com/vp/445e2da374ff1b833c09c02f2d6f7188/5B81FCF0/t51.2885-19/s150x150/30949300_174802809892224_713658990038351872_n.jpg" alt="Foto de perfil">
+                <img class="insta-profile_picture" src="{% static '' %}{{ my_user.photo|default_if_none:'images/default.png' }}" alt="Foto de perfil">
             </section>
             <section class="insta-profile_data">
                 <article class="insta-profile_data_section">

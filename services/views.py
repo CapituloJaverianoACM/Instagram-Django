@@ -1,4 +1,5 @@
-from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.core.files.storage import FileSystemStorage
 
@@ -20,7 +21,24 @@ def login(request):
 def home(request):
     if not request.user.is_authenticated:
         return redirect('index')
-    context = dict(username=request.user.username)
+    my_user = request.user.myuser
+    follow = Follow.objects.filter(user_from=my_user)
+    complete_post = my_user.post_set.all()
+    for f in follow:
+        complete_post = complete_post | f.user_to.post_set.all()
+    complete_post = complete_post.order_by('-date')
+
+    all_users = User.objects.all()
+    likes = Like.objects.filter(user=my_user)
+    likes = [like.post.id for like in likes]
+
+    context = dict(
+        current_user=my_user,
+        username=request.user.username,
+        complete_post=complete_post,
+        all_users=all_users,
+        likes=likes
+    )
     return render(request, "home.html", context)
 
 
@@ -46,7 +64,7 @@ def upload_photo(request):
         path_photo = fs.url(url_photo)
 
         post = Post.objects.create(photo=path_photo, description=description, user=my_user)
-        return redirect('profile')
+        return redirect('profile', username)
 
 
 def profile(request, username):
@@ -63,7 +81,7 @@ def profile(request, username):
 
     my_user = MyUser.objects.get(user_django=user)
     my_user_id = my_user.id
-    post = Post.objects.filter(user_id=my_user_id)
+    post = Post.objects.filter(user_id=my_user_id).order_by('-date')
     number_followers = Follow.objects.filter(user_to_id=my_user_id).count()
     number_victims = Follow.objects.filter(user_from_id=my_user_id).count()
     context.update(
@@ -98,7 +116,10 @@ def validate_user(request):
 
 def search(request):
     username = request.POST['search_username']
-    user = User.objects.get(username=username)
+    try:
+        user = User.objects.get(username=username)
+    except User.DoesNotExist:
+        user = None
     if user:
         return redirect('profile', user.username)
     else:
@@ -118,3 +139,33 @@ def unfollow(request, begin, end):
     follow = Follow.objects.get(user_from=user_begin.myuser, user_to=user_end.myuser)
     follow.delete()
     return redirect('profile', end)
+
+
+@csrf_exempt
+def like(request):
+    post_id = request.POST['post_id']
+    post = Post.objects.get(id=post_id)
+    my_user = request.user.myuser
+    data = dict(
+        user=my_user,
+        post=post
+    )
+    like = Like.objects.create(**data)
+
+    response = dict(message='OK', likes_count=post.like_set.count())
+    return JsonResponse(response)
+
+
+@csrf_exempt
+def dislike(request):
+    post_id = request.POST['post_id']
+    post = Post.objects.get(id=post_id)
+    my_user = request.user.myuser
+    data = dict(
+        user=my_user,
+        post=post
+    )
+    like = Like.objects.get(**data)
+    like.delete()
+    response = dict(message='OK', likes_count=post.like_set.count())
+    return JsonResponse(response)
