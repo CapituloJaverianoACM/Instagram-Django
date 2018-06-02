@@ -24,13 +24,14 @@
     <section class="insta-card-comments">
         {% for comment in post.comment_set.all %}
         <p class="insta-card-comment">
-            <span class="insta-card-comment-user">juanmsl</span>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam sint tenetur voluptatum.
+            <span class="insta-card-comment-user">{{ comment.user.user_django.username }}</span>
+            {{ comment.content }}
         </p>
         {% endfor %}
     </section>
     <span class="insta-card-time">{{ post }}</span>
-    <form method="POST" action="" class="insta-card-form">
-        <input class="insta-card-input" placeholder="Agrega un comentario..."/>
+    <form method="POST" action="{% url 'comment' post.id %}" class="insta-card-form">
+        {% csrf_token %}
+        <input name='comment' class="insta-card-input" placeholder="Agrega un comentario..."/>
     </form>
 </section>

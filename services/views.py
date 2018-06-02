@@ -169,3 +169,16 @@ def dislike(request):
     like.delete()
     response = dict(message='OK', likes_count=post.like_set.count())
     return JsonResponse(response)
+
+
+def comment(request, post_id):
+    my_user = request.user.myuser
+    comment = request.POST['comment']
+    post = Post.objects.get(id=post_id)
+    data = dict(
+        content=comment,
+        post=post,
+        user=my_user
+    )
+    Comment.objects.create(**data)
+    return redirect('home')
